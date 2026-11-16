@@ -18,7 +18,7 @@ class Producto:
 
 
 # ==========================================
-# 2. GENERACIÓN DE DATOS DE PRUEBA (50 PRODUCTOS)
+# 2. GENERACION DE DATOS DE PRUEBA (50 PRODUCTOS)
 # ==========================================
 def generar_productos(n=50):
     categorias = ["Electrónica", "Ropa", "Libros", "Hogar", "Deportes"]
@@ -116,7 +116,7 @@ def insertion_sort(arr, key_func, reverse=False):
 
 
 # ==========================================
-# 4. ALGORITMOS DE BÚSQUEDA
+# 4. ALGORITMOS DE BUSQUEDA
 # ==========================================
 
 # Búsqueda Binaria (por ID)
@@ -147,7 +147,7 @@ def busqueda_lineal_nombre(arr, subcadena):
 # 5. FUNCIÓN PRINCIPAL Y MEDICIONES
 # ==========================================
 def main():
-    print("=== 1. GENERACIÓN DE DATOS ===")
+    print("=== 1. GENERACION DE DATOS ===")
     productos = generar_productos(50)
     print(f"Se han generado {len(productos)} productos exitosamente.\n")
 
@@ -161,7 +161,7 @@ def main():
         ("Insertion Sort", insertion_sort)
     ]
 
-    print("=== 2. MEDICIÓN DE TIEMPOS DE ORDENAMIENTO ===")
+    print("=== 2. MEDICION DE TIEMPOS DE ORDENAMIENTO ===")
     print(f"{'Algoritmo':<15} | {'Precio (Asc) [ms]':<18} | {'Rating (Desc) [ms]'}")
     print("-" * 57)
 
@@ -180,7 +180,7 @@ def main():
 
         print(f"{nombre_alg:<15} | {t_precio:<18.4f} | {t_rating:<18.4f}")
 
-    print("\n=== 3. PRUEBAS DE BÚSQUEDA BINARIA POR ID ===")
+    print("\n=== 3. PRUEBAS DE BUSQUEDA BINARIA POR ID ===")
     productos_por_id = sorted(productos, key=lambda p: p.id)
     
     ids_existentes = [p.id for p in random.sample(productos, 10)]
@@ -195,7 +195,7 @@ def main():
     t1 = time.perf_counter()
     print(f"Tiempo total (10 exist. + 10 no exist. x 1000 iteraciones): {(t1 - t0)*1000:.4f} ms")
 
-    print("\n=== 4. PRUEBAS DE BÚSQUEDA LINEAL POR NOMBRE (SUBCADENA) ===")
+    print("\n=== 4. PRUEBAS DE BUSQUEDA LINEAL POR NOMBRE (SUBCADENA) ===")
     subs_existentes = ["Smart", "Pro", "Max", "Camisa", "Libro", "Reloj", "Cafetera", "Silla", "Mochila", "Ultra"]
     subs_inexistentes = ["Xyz123", "Abc999", "Notfound", "FooBar", "Test111", "Zonked", "BlahBlah", "GhostItem", "Void", "Missing"]
 
@@ -206,7 +206,7 @@ def main():
         for sub in subs_inexistentes:
             busqueda_lineal_nombre(productos, sub)
     t1 = time.perf_counter()
-    print(f"Tiempo total Búsqueda Lineal por Subcadena (x 1000 iteraciones): {(t1 - t0)*1000:.4f} ms")
+    print(f"Tiempo total Busqueda Lineal por Subcadena (x 1000 iteraciones): {(t1 - t0)*1000:.4f} ms")
 
 if __name__ == "__main__":
     main()
